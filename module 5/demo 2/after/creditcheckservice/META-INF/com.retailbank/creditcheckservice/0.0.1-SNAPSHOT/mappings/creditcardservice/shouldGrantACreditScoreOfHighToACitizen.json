@@ -1,0 +1,24 @@
+{
+  "id" : "b48a26c7-255d-4676-85ad-072a8f3e207e",
+  "request" : {
+    "url" : "/credit-scores",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['citizenNumber'] == 1234)]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"score\":\"HIGH\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "b48a26c7-255d-4676-85ad-072a8f3e207e"
+}
